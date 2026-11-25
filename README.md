@@ -48,7 +48,7 @@ Semaphore speaks plain HTTP. Put a proxy in front for TLS, such as [circuit-cadd
 
 ```hcl
 module "caddy" {
-  source = "github.com/conn3xorg/circuit-caddy?ref=v0.3.0"
+  source = "github.com/conn3xorg/circuit-caddy?ref=v0.4.1"
 
   hosts                = { ops = "192.168.1.50" }
   ssh_private_key_file = "~/.ssh/id_ed25519"
@@ -59,7 +59,7 @@ module "caddy" {
 }
 ```
 
-`public_url` sets `SEMAPHORE_WEB_ROOT`, which Semaphore puts in the links it sends in alerts. Without a proxy, reach it over SSH: `ssh -L 3000:127.0.0.1:3000 root@192.168.1.50`, then open `http://localhost:3000`.
+circuit-caddy v0.4.1 needs Conn3x v0.29.0 or later. `public_url` sets `SEMAPHORE_WEB_ROOT`, which Semaphore puts in the links it sends in alerts. Without a proxy, reach it over SSH: `ssh -L 3000:127.0.0.1:3000 root@192.168.1.50`, then open `http://localhost:3000`.
 
 ### With PostgreSQL
 
