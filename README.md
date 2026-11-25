@@ -18,7 +18,7 @@ variable "semaphore_password" {
 }
 
 module "semaphore" {
-  source = "github.com/conn3xorg/circuit-semaphore?ref=v0.1.0"
+  source = "github.com/conn3xorg/circuit-semaphore?ref=v0.1.1"
 
   hosts                = { ops = "192.168.1.50" }
   ssh_private_key_file = "~/.ssh/id_ed25519"
@@ -84,7 +84,7 @@ module "postgres" {
 }
 
 module "semaphore" {
-  source = "github.com/conn3xorg/circuit-semaphore?ref=v0.1.0"
+  source = "github.com/conn3xorg/circuit-semaphore?ref=v0.1.1"
 
   depends_on = [module.postgres]
 
