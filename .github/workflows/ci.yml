@@ -66,12 +66,12 @@ jobs:
           # Podman in the host container needs a rootful, privileged container.
           PODMAN: sudo podman
         run: ./up.sh
-      # The release before the pinned one, so the next step is a real upgrade.
+      # The previous default, so the next step is the upgrade users make.
       - name: Apply the previous release
         working-directory: examples/local
         env:
-          TF_VAR_semaphore_version: v2.19.16
-          TF_VAR_image_digest: sha256:3707a971a57fdc5ac99a184bf83f2efb7d00cbeec8fb08a16a8028f77229e141
+          TF_VAR_semaphore_version: v2.19.17
+          TF_VAR_image_digest: sha256:008dacd9f1adbd92e8a048f1786ae1dd9bed2a352aca2eb30b9837de5706e7f7
         run: |
           conn3x init
           conn3x apply -auto-approve

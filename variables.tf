@@ -36,19 +36,19 @@ variable "ssh_become" {
 
 variable "semaphore_version" {
   type        = string
-  default     = "v2.19.17"
+  default     = "v2.20.23"
   nullable    = false
-  description = "Tag of the docker.io/semaphoreui/semaphore image, such as \"v2.19.17\". Change image_digest with it."
+  description = "Tag of the docker.io/semaphoreui/semaphore image, such as \"v2.20.23\". Change image_digest with it."
 
   validation {
     condition     = can(regex("^[A-Za-z0-9_][A-Za-z0-9_.-]*$", var.semaphore_version))
-    error_message = "semaphore_version must be an image tag, such as \"v2.19.17\"."
+    error_message = "semaphore_version must be an image tag, such as \"v2.20.23\"."
   }
 }
 
 variable "image_digest" {
   type        = string
-  default     = "sha256:008dacd9f1adbd92e8a048f1786ae1dd9bed2a352aca2eb30b9837de5706e7f7"
+  default     = "sha256:00e6733dbca9a2bddf77e048f34f9002027c8a6f549a8cde18d13101e84a19c3"
   nullable    = false
   description = "Digest of docker.io/semaphoreui/semaphore for semaphore_version. Podman pulls by the digest, so a tag that moves upstream can't change what runs."
 
